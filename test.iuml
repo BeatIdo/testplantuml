@@ -1,0 +1,17 @@
+@startuml
+
+title Proxy-Network - Class Diagram
+
+class ProxyNetworkServer
+class NetworkClient << (S, orange) Singleton >>
+class NetworkManagerClient
+class DockerProxy
+class ProxyJsonTools
+
+ProxyNetworkServer .down. NetworkClient
+ProxyNetworkServer .down. DockerProxy
+ProxyNetworkServer o-right- ProxyJsonTools
+
+NetworkClient <|-down- NetworkManagerClient
+
+@enduml
